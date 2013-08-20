@@ -1,0 +1,49 @@
+Summary:	Templates for KDE Application Development
+Name:		kapptemplate
+Version:	4.11.0
+Release:	1
+Epoch:		1
+Group:		Graphical desktop/KDE
+License:	GPLv2+
+Url:		http://www.kde.org
+%define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
+%if %{is_beta}
+%define ftpdir unstable
+%else
+%define ftpdir stable
+%endif
+Source0:	ftp://ftp.kde.org/pub/kde/%{ftpdir}/%{version}/src/%{name}-%{version}.tar.xz
+BuildRequires:	kdelibs4-devel
+
+%description
+KAppTemplate is a set of modular shell scripts that will create a framework for
+any number of KDE application types. At its base level, it handles creation of
+things like the automake/autoconf framework, lsm files, RPM spec files, and po
+files. Then, there are individual modules that allow you to create a skeleton
+KDE application, a KPart application, a KPart plugin, or even convert existing
+source code to the KDE framework.
+
+%files
+%{_kde_bindir}/kapptemplate
+%{_kde_applicationsdir}/kapptemplate.desktop
+%{_kde_datadir}/config.kcfg/kapptemplate.kcfg
+%{_kde_appsdir}/kdevappwizard
+%{_kde_docdir}/*/*/kapptemplate
+%{_kde_iconsdir}/hicolor/*/apps/kapptemplate.png
+
+#----------------------------------------------------------------------------
+
+%prep
+%setup -q
+
+%build
+%cmake_kde4
+%make
+
+%install
+%makeinstall_std -C build
+
+%changelog
+* Wed Aug 14 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.11.0-1
+- Split from kdesdk4 package as upstream did
+- New version 4.11.0
