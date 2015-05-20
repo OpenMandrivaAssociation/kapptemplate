@@ -32,6 +32,14 @@ KDE application, a KPart application, a KPart plugin, or even convert existing
 source code to the KDE framework.
 
 %files
+%doc %{_docdir}/HTML/en/%{name}
+%{_bindir}/kapptemplate
+%{_datadir}/appdata/kapptemplate.appdata.xml
+%{_datadir}/applications/kapptemplate.desktop
+%{_datadir}/config.kcfg/kapptemplate.kcfg
+%{_iconsdir}/hicolor/*/apps/*.*g
+%{_datadir}/kdevappwizard/template_previews/*.png
+%{_datadir}/kdevappwizard/templates/*.tar.*
 
 #----------------------------------------------------------------------------
 
