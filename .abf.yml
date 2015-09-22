@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   kapptemplate-15.08.0.tar.xz: 3a86f69cb560f9fede96d582d6bb4c7108da4f22
+sources:
+  kapptemplate-15.08.1.tar.xz: 1ace656b02298dd8d7c4c2f34d169f7f84f4b514
