@@ -1,6 +1,6 @@
 Summary:	Templates for KDE Application Development
 Name:		kapptemplate
-Version:	15.12.3
+Version:	16.04.0
 Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
@@ -12,7 +12,7 @@ Url:		http://www.kde.org
 %else
 %define ftpdir stable
 %endif
-Source0:	http://download.kde.org/%{ftpdir}/%{version}/src/%{name}-%{version}.tar.xz
+Source0:	http://download.kde.org/%{ftpdir}/applications/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	cmake(KF5CoreAddons)
 BuildRequires:	cmake(KF5ConfigWidgets)
 BuildRequires:	cmake(KF5Completion)
