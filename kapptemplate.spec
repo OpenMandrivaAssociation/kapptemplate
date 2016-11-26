@@ -22,6 +22,7 @@ BuildRequires:	cmake(KF5I18n)
 BuildRequires:	cmake(KF5DocTools)
 BuildRequires:	cmake(ECM)
 BuildRequires:	pkgconfig(Qt5Test)
+BuildRequires:	gnutar
 
 %description
 KAppTemplate is a set of modular shell scripts that will create a framework for
@@ -45,6 +46,9 @@ source code to the KDE framework.
 
 %prep
 %setup -q
+
+sed -i -e "s/tar/gtar/g" cmake/modules/KAppTemplateMacro.cmake
+
 %cmake_kde5
 
 %build
