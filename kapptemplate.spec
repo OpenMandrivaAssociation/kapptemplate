@@ -1,6 +1,6 @@
 Summary:	Templates for KDE Application Development
 Name:		kapptemplate
-Version:	17.03.80
+Version:	17.04.0
 Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
@@ -32,8 +32,7 @@ files. Then, there are individual modules that allow you to create a skeleton
 KDE application, a KPart application, a KPart plugin, or even convert existing
 source code to the KDE framework.
 
-%files
-%doc %{_docdir}/HTML/en/%{name}
+%files -f kapptemplate.lang
 %{_bindir}/kapptemplate
 %{_datadir}/metainfo/org.kde.kapptemplate.appdata.xml
 %{_datadir}/applications/org.kde.kapptemplate.desktop
@@ -56,3 +55,4 @@ source code to the KDE framework.
 
 %install
 %ninja_install -C build
+%find_lang kapptemplate --with-html
