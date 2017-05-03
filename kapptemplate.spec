@@ -22,7 +22,7 @@ BuildRequires:	cmake(KF5I18n)
 BuildRequires:	cmake(KF5DocTools)
 BuildRequires:	cmake(ECM)
 BuildRequires:	pkgconfig(Qt5Test)
-BuildRequires:	gnutar
+#BuildRequires:	gnutar
 
 %description
 KAppTemplate is a set of modular shell scripts that will create a framework for
