@@ -1,6 +1,6 @@
 Summary:	Templates for KDE Application Development
 Name:		kapptemplate
-Version:	17.04.0
+Version:	17.04.1
 Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
@@ -38,7 +38,6 @@ source code to the KDE framework.
 %{_datadir}/applications/org.kde.kapptemplate.desktop
 %{_datadir}/config.kcfg/kapptemplate.kcfg
 %{_iconsdir}/hicolor/*/apps/*.*g
-%{_datadir}/kdevappwizard/template_previews/*.png
 %{_datadir}/kdevappwizard/templates/*.tar.*
 
 #----------------------------------------------------------------------------
