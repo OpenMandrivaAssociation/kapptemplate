@@ -1,6 +1,6 @@
 Summary:	Templates for KDE Application Development
 Name:		kapptemplate
-Version:	20.12.3
+Version:	21.03.80
 Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
@@ -39,6 +39,7 @@ source code to the KDE framework.
 %{_datadir}/config.kcfg/kapptemplate.kcfg
 %{_iconsdir}/hicolor/*/apps/*.*g
 %{_datadir}/kdevappwizard/templates/*.tar.*
+%{_datadir}/qlogging-categories5/kapptemplate.categories
 
 #----------------------------------------------------------------------------
 
