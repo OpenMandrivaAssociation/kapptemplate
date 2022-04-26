@@ -1,6 +1,6 @@
 Summary:	Templates for KDE Application Development
 Name:		kapptemplate
-Version:	22.03.90
+Version:	22.04.0
 Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
