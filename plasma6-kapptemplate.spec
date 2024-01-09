@@ -44,7 +44,7 @@ source code to the KDE framework.
 #----------------------------------------------------------------------------
 
 %prep
-%autosetup -p1
+%autosetup -p1 -n kapptemplate-%{version}
 
 #sed -i -e "s/tar/gtar/g" cmake/modules/KAppTemplateMacro.cmake
 
