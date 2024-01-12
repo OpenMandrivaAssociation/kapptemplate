@@ -1,8 +1,7 @@
 Summary:	Templates for KDE Application Development
 Name:		plasma6-kapptemplate
-Version:	24.01.85
+Version:	24.01.90
 Release:	1
-Epoch:		1
 Group:		Graphical desktop/KDE
 License:	GPLv2+
 Url:		http://www.kde.org
