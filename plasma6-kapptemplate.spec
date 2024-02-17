@@ -1,7 +1,10 @@
+%define git 20240217
+%define gitbranch release/24.02
+%define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 Summary:	Templates for KDE Application Development
 Name:		plasma6-kapptemplate
-Version:	24.01.95
-Release:	1
+Version:	24.01.96
+Release:	%{?git:0.%{git}.}1
 Group:		Graphical desktop/KDE
 License:	GPLv2+
 Url:		http://www.kde.org
@@ -11,7 +14,11 @@ Url:		http://www.kde.org
 %else
 %define ftpdir stable
 %endif
+%if 0%{?git:1}
+Source0:	https://invent.kde.org/sdk/kapptemplate/-/archive/%{gitbranch}/kapptemplate-%{gitbranchd}.tar.bz2#/kapptemplate-%{git}.tar.bz2
+%else
 Source0:	http://download.kde.org/%{ftpdir}/release-service/%{version}/src/kapptemplate-%{version}.tar.xz
+%endif
 BuildRequires:	cmake(KF6CoreAddons)
 BuildRequires:	cmake(KF6ConfigWidgets)
 BuildRequires:	cmake(KF6Completion)
@@ -43,7 +50,7 @@ source code to the KDE framework.
 #----------------------------------------------------------------------------
 
 %prep
-%autosetup -p1 -n kapptemplate-%{version}
+%autosetup -p1 -n kapptemplate-%{?git:%{gitbranchd}}%{!?git:%{version}}
 
 #sed -i -e "s/tar/gtar/g" cmake/modules/KAppTemplateMacro.cmake
 
