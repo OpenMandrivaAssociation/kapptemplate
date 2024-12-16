@@ -28,6 +28,7 @@ BuildRequires:	cmake(KF6I18n)
 BuildRequires:	cmake(KF6DocTools)
 BuildRequires:	cmake(ECM)
 BuildRequires:	pkgconfig(Qt6Test)
+BuildRequires:	pkgconfig(Qt6Quick)
 #BuildRequires:	gnutar
 
 %description
