@@ -30,6 +30,7 @@ BuildRequires:	cmake(KF6KirigamiAddons)
 BuildRequires:	cmake(ECM)
 BuildRequires:	pkgconfig(Qt6Test)
 BuildRequires:	pkgconfig(Qt6Quick)
+BuildRequires:	pkgconfig(Qt6QuickControls2)
 #BuildRequires:	gnutar
 
 %description
