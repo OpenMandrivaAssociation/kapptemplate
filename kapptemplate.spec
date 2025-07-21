@@ -3,7 +3,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 Summary:	Templates for KDE Application Development
 Name:		kapptemplate
-Version:	25.04.0
+Version:	25.04.3
 Release:	%{?git:0.%{git}.}1
 Group:		Graphical desktop/KDE
 License:	GPLv2+
@@ -32,6 +32,10 @@ BuildRequires:	pkgconfig(Qt6Test)
 BuildRequires:	pkgconfig(Qt6Quick)
 BuildRequires:	pkgconfig(Qt6QuickControls2)
 #BuildRequires:	gnutar
+BuildSystem:	cmake
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+
+%rename plasma6-kapptemplate
 
 %description
 KAppTemplate is a set of modular shell scripts that will create a framework for
@@ -49,21 +53,3 @@ source code to the KDE framework.
 %{_iconsdir}/hicolor/*/apps/*.*g
 %{_datadir}/kdevappwizard/templates/*.tar.*
 %{_datadir}/qlogging-categories6/kapptemplate.categories
-
-#----------------------------------------------------------------------------
-
-%prep
-%autosetup -p1 -n kapptemplate-%{?git:%{gitbranchd}}%{!?git:%{version}}
-
-#sed -i -e "s/tar/gtar/g" cmake/modules/KAppTemplateMacro.cmake
-
-%cmake \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja -C build
-
-%install
-%ninja_install -C build
-%find_lang kapptemplate --with-html
